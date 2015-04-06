@@ -1,0 +1,26 @@
+@spacing: 0.5em;
+
+.sidebar {
+    display: none;
+
+    .media(@medium, {
+        display: block;
+        float: left;
+        text-align: right;
+        width: 5em;
+
+        nav {
+            margin-bottom: @spacing;
+        }
+
+        li {
+            list-style: none;
+            padding-bottom: @spacing;
+        }
+
+        .social-media-list li {
+            display: inline-block;
+            width: 2em;
+        }
+    });
+}

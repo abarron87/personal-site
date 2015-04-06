@@ -1,0 +1,73 @@
+</div> <!-- #wrapper -->
+<footer id="site-footer">
+    <div id="footer-content">
+        <ul class="social-media-list unorthodox-list">
+            {% if site.github-handle %}
+            <li>
+                <a href="https://github.com/{{ site.github-handle }}" target="_blank">
+                    <svg viewBox="0 0 100 100" class="icon shape-github">
+                        <use xlink:href="#shape-github"></use>
+                    </svg>
+
+                    <!--<span class="handle">{{ site.github_handle }}</span>-->
+                </a>
+            </li>
+            {% endif %}
+
+            {% if site.linkedin-handle %}
+            <li>
+                <a href="https://www.linkedin.com/in/{{ site.linkedin-handle }}" target="_blank">
+                    <svg viewBox="0 0 100 100" class="icon shape-linkedin">
+                        <use xlink:href="#shape-linkedin"></use>
+                    </svg>
+
+                    <!--<span class="handle">{{ site.twitter_handle }}</span>-->
+                </a>
+            </li>
+            {% endif %}
+
+            {% if site.twitter-handle %}
+            <li>
+                <a href="https://twitter.com/{{ site.twitter-handle }}" target="_blank">
+                    <svg viewBox="0 0 100 100" class="icon shape-twitter">
+                        <use xlink:href="#shape-twitter"></use>
+                    </svg>
+
+                    <!--<span class="handle">{{ site.twitter_handle }}</span>-->
+                </a>
+            </li>
+            {% endif %}
+
+            {% if site.instagram-handle %}
+            <li>
+                <a href="https://instagram.com/{{ site.instagram-handle }}" target="_blank">
+                    <svg viewBox="0 0 100 100" class="icon shape-instgram">
+                        <use xlink:href="#shape-instagram"></use>
+                    </svg>
+
+                    <!--<span class="handle">{{ site.twitter_handle }}</span>-->
+                </a>
+            </li>
+            {% endif %}
+
+            <li>
+                <a href="#" target="_blank">
+                    <svg viewBox="0 0 100 100" class="icon shape-location">
+                        <use xlink:href="#shape-location"></use>
+                    </svg>
+
+                    <!--<span class="handle">{{ site.twitter_handle }}</span>-->
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <small class="copy">&copy; Alex Barron 2015</small>
+
+</footer>
+
+{% if site.env == 'live' %}
+<script src="/live/app.min.js"></script>
+{% else %}
+<script src="/dev/app.js"></script>
+{% endif %}

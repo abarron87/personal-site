@@ -1,0 +1,104 @@
+<header id="site-header">
+    <nav id="mobile-nav" class="open">
+
+        <div class="navicon">
+        </div>
+        <div class="menu">
+            <ul class="unorthodox-list" role="menu">
+                <li>
+                    <a class="active" href="{{ site.baseurl }}/">About</a>
+                </li>
+                <li>
+                    <a href="{{ site.baseurl }}/work">Work</a>
+                </li>
+                <li>
+                    <a href="{{ site.baseurl }}/blog">Blog</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h1 class="site-title">
+        <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+    </h1>
+
+    <h2>{{ site.slogan }}</h2>
+
+</header>
+
+<div id="wrapper">
+    <div class="sidebar">
+        <nav>
+            <ul role="menu">
+                <li>
+                    <a class="active" href="{{ site.baseurl }}/">About</a>
+                </li>
+                <li>
+                    <a href="{{ site.baseurl }}/work">Work</a>
+                </li>
+                <li>
+                    <a href="{{ site.baseurl }}/blog">Blog</a>
+                </li>
+            </ul>
+        </nav>
+        <ul class="social-media-list">
+            {% if site.github-handle %}
+            <li>
+                <a href="https://github.com/{{ site.github-handle }}" title="@abarron87 on Github" target="_blank">
+                    <svg viewBox="0 0 100 100" class="icon shape-github">
+                        <use xlink:href="#shape-github"></use>
+                    </svg>
+
+                    <!--<span class="handle">{{ site.github_handle }}</span>-->
+                </a>
+            </li>
+            {% endif %}
+
+            {% if site.linkedin-handle %}
+            <li>
+                <a href="https://www.linkedin.com/in/{{ site.linkedin-handle }}" title="Alex Barron on LinkedIn"
+                   target="_blank">
+                    <svg viewBox="0 0 100 100" class="icon shape-linkedin">
+                        <use xlink:href="#shape-linkedin"></use>
+                    </svg>
+
+                    <!--<span class="handle">{{ site.twitter_handle }}</span>-->
+                </a>
+            </li>
+            {% endif %}
+
+            {% if site.twitter-handle %}
+            <li>
+                <a href="https://twitter.com/{{ site.twitter-handle }}" title="@abarron87 on Twitter" target="_blank">
+                    <svg viewBox="0 0 100 100" class="icon shape-twitter">
+                        <use xlink:href="#shape-twitter"></use>
+                    </svg>
+
+                    <!--<span class="handle">{{ site.twitter_handle }}</span>-->
+                </a>
+            </li>
+            {% endif %}
+
+            {% if site.instagram-handle %}
+            <li>
+                <a href="https://instagram.com/{{ site.instagram-handle }}" title="@abarron87 on Instagram"
+                   target="_blank">
+                    <svg viewBox="0 0 100 100" class="icon shape-instgram">
+                        <use xlink:href="#shape-instagram"></use>
+                    </svg>
+
+                    <!--<span class="handle">{{ site.twitter_handle }}</span>-->
+                </a>
+            </li>
+            {% endif %}
+
+            <li>
+                <a href="#" target="_blank">
+                    <svg viewBox="0 0 100 100" class="icon shape-location">
+                        <use xlink:href="#shape-location"></use>
+                    </svg>
+
+                    <!--<span class="handle">{{ site.twitter_handle }}</span>-->
+                </a>
+            </li>
+        </ul>
+    </div>

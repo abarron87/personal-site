@@ -1,0 +1,51 @@
+body {
+    font-family: @body-font;
+    color: @primary-color;
+    padding: @body-padding;
+    background-color: @body-bg-color;
+    font-size: 1.1em;
+}
+
+a {
+    text-decoration: none;
+    color: @tertiary-color;
+}
+
+small {
+    font-size: 0.8em;
+    color: lighten(@secondary-color, 30%);
+}
+
+#site-header {
+    text-align: center;
+
+    h1 {
+        margin: 1em 0 0;
+        font-size: 2.5em;
+
+        a {
+            color: @primary-color;
+        }
+    }
+
+    h2 {
+        margin: 0.6em 0;
+        text-align: center;
+    }
+}
+
+#wrapper {
+    max-width: 50em;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.page-content {
+    max-width: 43em;
+
+    .media(@medium, {
+        padding-left: 2em;
+        float: left;
+        width: ~'calc(100% - 5em)';
+    });
+}

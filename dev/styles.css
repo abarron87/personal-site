@@ -1,0 +1,388 @@
+/**
+ * Global Reset of all HTML Elements
+ *
+ * Resetting all of our HTML Elements ensures a smoother
+ * visual transition between browsers. If you don't believe me,
+ * try temporarily commenting out this block of code, then go
+ * and look at Mozilla versus Safari, both good browsers with
+ * a good implementation of CSS. The thing is, all browser CSS
+ * defaults are different and at the end of the day if visual
+ * consistency is what we're shooting for, then we need to
+ * make sure we're resetting all spacing elements.
+ *
+ */
+html,
+body {
+  border: 0;
+  font-family: "Helvetica-Neue", "Helvetica", Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+div,
+span,
+object,
+iframe,
+img,
+table,
+caption,
+thead,
+tbody,
+tfoot,
+tr,
+tr,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+hgroup,
+menu,
+nav,
+footer,
+header,
+section,
+summary,
+mark,
+audio,
+video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cit,
+code,
+del,
+dfn,
+em,
+ins,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+b,
+i,
+hr,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+label {
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+  display: block;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table caption,
+table th,
+table td {
+  text-align: left;
+  vertical-align: middle;
+}
+a img {
+  border: 0;
+}
+:focus {
+  outline: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.hide {
+  display: none !important;
+}
+@font-face {
+  font-family: 'fjord-one';
+  src: url('../assets/fonts/fjord-one/fjord-one-regular-webfont.eot');
+  src: url('../assets/fonts/fjord-one/fjord-one-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/fjord-one/fjord-one-regular-webfont.woff') format('woff'), url('../assets/fonts/fjord-one/fjord-one-regular-webfont.ttf') format('truetype'), url('../assets/fonts/fjord-one/fjord-one-regular-webfont.svg#fjordone') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.unorthodox-list {
+  text-align: center;
+}
+.unorthodox-list li {
+  list-style: none;
+  display: inline-block;
+}
+.social-media-list svg {
+  width: 1.5em;
+}
+.no-touch .icon {
+  fill: #aaa;
+}
+.shape-twitter,
+.shape-twitter:hover {
+  fill: #55acee;
+}
+.shape-github,
+.shape-github:hover {
+  fill: #444;
+}
+.shape-linkedin,
+.shape-linkedin:hover {
+  fill: #0083BF;
+}
+.shape-location,
+.shape-location:hover {
+  fill: #F76054;
+}
+.map {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 60%;
+  width: 30em;
+}
+.map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+body {
+  font-family: 'fjord-one', sans-serif;
+  color: #333333;
+  padding: 1.14em;
+  background-color: #ffffff;
+  font-size: 1.1em;
+}
+a {
+  text-decoration: none;
+  color: orangered;
+}
+small {
+  font-size: 0.8em;
+  color: #b3b3b3;
+}
+#site-header {
+  text-align: center;
+}
+#site-header h1 {
+  margin: 1em 0 0;
+  font-size: 2.5em;
+}
+#site-header h1 a {
+  color: #333333;
+}
+#site-header h2 {
+  margin: 0.6em 0;
+  text-align: center;
+}
+#wrapper {
+  max-width: 50em;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.page-content {
+  max-width: 43em;
+}
+@media only screen and (min-width: 50em) {
+  .page-content {
+    padding-left: 2em;
+    float: left;
+    width: calc(100% - 5em);
+  }
+}
+h1 {
+  font-size: 2em;
+  line-height: 1.2;
+  border-bottom: 0.14em orangered solid;
+  display: inline-block;
+}
+h2 {
+  font-size: 1.2em;
+  color: #666666;
+}
+nav a {
+  color: #666666;
+}
+nav a.active {
+  color: orangered;
+}
+nav#mobile-nav {
+  position: absolute;
+  left: 0;
+  background-color: #ffffff;
+  width: 100%;
+  height: 2em;
+}
+nav#mobile-nav .shape-navicon {
+  width: 20px;
+  height: 30px;
+}
+nav#mobile-nav ul {
+  width: 13.5em;
+}
+nav#mobile-nav li {
+  margin-right: 1em;
+}
+nav#mobile-nav li:last-child {
+  margin-right: 0;
+}
+nav#mobile-nav .navicon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 2.74em;
+  height: 1.6em;
+  background-color: #ffffff;
+}
+nav#mobile-nav .navicon:before,
+nav#mobile-nav .navicon:after {
+  content: '';
+  display: block;
+  width: 1.6em;
+  height: 0.1em;
+  background-color: #666;
+  margin-bottom: 5px;
+  float: right;
+  transition: transform 0.2s;
+}
+nav#mobile-nav .menu {
+  height: 0;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  background-color: transparent;
+  border: 1px solid orangered;
+  border-width: 1px 0 0;
+  overflow: hidden;
+  transition: height 0.2s, width 0.2s 0.4s, transform 0.2s 0.4s;
+  -webkit-transform: translateX(-62.5em);
+  -moz-transform: translateX(-62.5em);
+  -o-transform: translateX(-62.5em);
+  -ms-transform: translateX(-62.5em);
+  transform: translateX(-62.5em);
+}
+nav#mobile-nav.open .navicon:before {
+  margin: 0;
+  -webkit-transform: translate(0, 0.669em) rotate(-45deg) scale(0.8);
+  -moz-transform: translate(0, 0.669em) rotate(-45deg) scale(0.8);
+  -o-transform: translate(0, 0.669em) rotate(-45deg) scale(0.8);
+  -ms-transform: translate(0, 0.669em) rotate(-45deg) scale(0.8);
+  transform: translate(0, 0.669em) rotate(-45deg) scale(0.8);
+}
+nav#mobile-nav.open .navicon:after {
+  -webkit-transform: translate(0em, 0.55em) rotate(45deg) scale(0.8);
+  -moz-transform: translate(0em, 0.55em) rotate(45deg) scale(0.8);
+  -o-transform: translate(0em, 0.55em) rotate(45deg) scale(0.8);
+  -ms-transform: translate(0em, 0.55em) rotate(45deg) scale(0.8);
+  transform: translate(0em, 0.55em) rotate(45deg) scale(0.8);
+}
+nav#mobile-nav.open .menu {
+  top: 0;
+  height: 1.6em;
+  border-width: 1px 0;
+  z-index: 0;
+  transition: transform 0.2s, width 0.2s, height 0.2s 0.4s;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+@media only screen and (min-width: 50em) {
+  nav#mobile-nav {
+    display: none;
+  }
+}
+.patty {
+  fill: orangered;
+}
+.post {
+  padding-top: 2em;
+}
+@media only screen and (min-width: 50em) {
+  .post {
+    padding-top: 0;
+  }
+}
+.post-body p {
+  padding: 1em 0 0;
+}
+.post-body p:last-child {
+  padding-bottom: 1em;
+}
+#site-footer {
+  text-align: center;
+}
+#site-footer li {
+  padding: 0 0.5em;
+}
+#site-footer li a {
+  display: block;
+}
+#site-footer .copy {
+  display: inline-block;
+}
+@media only screen and (min-width: 50em) {
+  #footer-content {
+    display: none;
+  }
+}
+.sidebar {
+  display: none;
+}
+@media only screen and (min-width: 50em) {
+  .sidebar {
+    display: block;
+    float: left;
+    text-align: right;
+    width: 5em;
+  }
+  .sidebar nav {
+    margin-bottom: 0.5em;
+  }
+  .sidebar li {
+    list-style: none;
+    padding-bottom: 0.5em;
+  }
+  .sidebar .social-media-list li {
+    display: inline-block;
+    width: 2em;
+  }
+}

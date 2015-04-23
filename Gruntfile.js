@@ -39,7 +39,7 @@ module.exports = function(grunt) {
             live: {
                 files: {
                     'live/styles.css': ['live/styles.css'],
-                    'live/app.js': ['live/main.js']
+                    'live/app.js': ['<%= meta.scripts %>']
                 }
             }
         },
@@ -131,7 +131,7 @@ module.exports = function(grunt) {
             },
             live: {
                 options: {
-                    serve: false
+                    serve: true
                 }
             }
         },
@@ -193,8 +193,8 @@ module.exports = function(grunt) {
     grunt.registerTask('server', 'jekyll:dev');
 
     // Run Jekyll live with environment set to production
-    grunt.registerTask('jekyll-production', function() {
-        grunt.log.writeln('Setting environment variable JEKYLL_ENV=live');
+    grunt.registerTask('jekyll-live', function() {
+        grunt.log.writeln('Setting environment variable JEKYLL_ENV=production');
         process.env.JEKYLL_ENV = 'production';
         grunt.task.run('jekyll:live');
     });
@@ -203,8 +203,9 @@ module.exports = function(grunt) {
     grunt.registerTask('live', [
         'clean:all',
         'less:live',
+        'svgstore',
         'concat:live',
-        'autoprefixer:dev',
+        //'autoprefixer:dev',
         'cssmin',
         'uglify',
         'clean:liveTemp',

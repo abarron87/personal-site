@@ -1,17 +1,27 @@
-.post {
-    padding-top: 2em;
+.pretty-spacing {
+    margin: 1em 0 0;
 
-    .media(@medium, {
-        padding-top: 0;
-    });
+    &:last-child {
+        margin-bottom: 1em;
+    }
 }
 
-.post-body {
-    p {
-        padding: 1em 0 0;
+.post-list {
+    li {
+        list-style: none;
 
-        &:last-child {
-            padding-bottom: 1em;
-        }
+        .pretty-spacing;
+    }
+}
+
+.post {
+    h1 {
+        border-bottom: none;
+    }
+}
+
+.post-content {
+    p {
+        .pretty-spacing;
     }
 }

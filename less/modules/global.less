@@ -22,6 +22,11 @@ small {
     h1 {
         margin: 1em 0 0;
         font-size: 2.5em;
+        border-bottom: 0.14em @tertiary-color solid;
+
+        .media(@medium, {
+            margin-top: 0;
+        });
 
         a {
             color: @primary-color;
@@ -36,7 +41,7 @@ small {
 
 #wrapper {
     max-width: 50em;
-    margin: 0 auto;
+    margin: 3em auto 0;
     overflow: hidden;
 }
 

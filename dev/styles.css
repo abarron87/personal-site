@@ -354,6 +354,46 @@ nav#mobile-nav.open .menu {
 .post h1 {
   border-bottom: none;
 }
+.post h2 {
+  margin-top: 1em;
+}
+.post figure {
+  width: 100%;
+  margin: 1em 0;
+}
+@media only screen and (min-width: 50em) {
+  .post figure:not(.panorama) {
+    width: 50%;
+  }
+  .post figure:nth-of-type(odd) {
+    float: left;
+    margin-right: 1em;
+  }
+  .post figure:nth-of-type(even) {
+    float: right;
+    margin-left: 1em;
+  }
+}
+.post figure.panorama {
+  display: none;
+}
+@media only screen and (min-width: 50em) {
+  .post figure.panorama {
+    display: block;
+    float: none;
+  }
+  .post figure.panorama img {
+    width: 100%;
+  }
+}
+.post figure img {
+  width: 100%;
+}
+.post figure figcaption {
+  font-size: 0.7em;
+  text-align: center;
+  padding: 0.5em 0;
+}
 .post-content p {
   margin: 1em 0 0;
 }

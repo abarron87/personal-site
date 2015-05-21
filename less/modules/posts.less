@@ -18,6 +18,54 @@
     h1 {
         border-bottom: none;
     }
+
+    h2 {
+        margin-top: 1em;
+    }
+
+    figure {
+        width: 100%;
+        margin: 1em 0;
+
+        .media(@medium, {
+            &:not(.panorama) {
+                width: 50%;
+            }
+
+            &:nth-of-type(odd) {
+                float: left;
+                margin-right: 1em;
+            }
+
+            &:nth-of-type(even) {
+                float: right;
+                margin-left: 1em;
+            }
+        });
+
+        &.panorama {
+            display: none;
+
+            .media(@medium, {
+                display: block;
+                float: none;
+
+                img {
+                    width: 100%;
+                }
+            });
+        }
+
+        img {
+            width: 100%;
+        }
+
+        figcaption {
+            font-size: 0.7em;
+            text-align: center;
+            padding: 0.5em 0;
+        }
+    }
 }
 
 .post-content {

@@ -1,0 +1,172 @@
+---
+layout: page
+title: auto-suggest - angular
+---
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/demo.min.js"></script>
+
+<h2>Description</h2>
+<p class="description">A tool to create a auto-suggest search from a tree of taxonomy categories.</p>
+<span class="toggle closed">
+    <a href="#">options</a>
+</span>
+<ul class="github-options unorthodox-list">
+    <li>
+        <a class="btn" href="" target="_blank">View on GitHub</a>
+    </li>
+    <li>
+        <a class="btn" href="" target="_blank">Download .zip</a>
+    </li>
+    <li>
+        <a class="btn" href="" target="_blank">Download .tar.gz</a>
+    </li>
+</ul>
+
+<span class="toggle closed">
+    <a href="#">variations</a>
+</span>
+<ul class="variations">
+    <li>
+        <a href="../">Pure JS</a>
+    </li>
+    <li>
+        <a href="../backbone">Backbone</a>
+    </li>
+</ul>
+
+<h2>Demo. <small>Built with Angular JS.</small></h2>
+<div id="superheroesWrapper">
+    <div ng-app="treeApp">
+        <script type="text/ng-template" id="superheroes.html">
+            <div id="superheroesAutoSuggestContainer" class="suggestionsContainer">
+                <input id="superheroesAutoSuggest" class="text" type="text" placeholder="Type a superhero's name" ng-model="query" ng-keyup="getSuggestions(query)"/>
+                <div class="taxonomySuggestions" ng-hide="suggestions.empty">
+                    <ul>
+                        <li ng-repeat="(id, suggestion) in suggestions">
+                            <input id="[[id]]" class="checkbox" type="checkbox" ng-click="toggleSelection($event)"/>
+                            <span>[[suggestion.name]] ([[suggestion.path + "/" + suggestion.name]])</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="selectedCategories">
+                    <ul>
+                        <li ng-repeat="(id, category) in selectedCategories" id="selectedCategory_{{id}}">
+                            [[category.name]] ([[category.path]]) <a href="#" class="remove" ng-click="removeSelection('category_'+id+'_container',id)">[remove]</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </script>
+        <div ng-controller="AutoSuggestController">
+            <span class="toggle closed">
+                <a href="#" id="toggle_tree">show tree</a>
+            </span>
+            <div id="superheroes" class="tree-container">
+                <div id="root_container" class="branch">
+                    <div id="category_1" class="tree_item level0">
+                        <input id="checkbox_category_1" type="checkbox" class="tree_checkbox"/>
+                        <a href="#">Superheroes</a>
+                    </div>
+                    <div id="category_1_container" class="branch level0 hide">
+                        <div id="category_2" class="tree_item level1">
+                            <input id="checkbox_category_2" type="checkbox" class="tree_checkbox"/>
+                            <a href="#">DC</a>
+                        </div>
+                        <div id="category_2_container" class="branch level1 hide">
+                            <div id="category_4" class="tree_item level2">
+                                <input id="checkbox_category_4" type="checkbox" class="tree_checkbox"/>
+                                <a href="#">Superman</a>
+                            </div>
+                            <div id="category_4_container" class="branch level2 hide"></div>
+
+                            <div id="category_5" class="tree_item level2">
+                                <input id="checkbox_category_5" type="checkbox" class="tree_checkbox"/>
+                                <a href="#">Batman</a>
+                            </div>
+                            <div id="category_5_container" class="branch level2 hide"></div>
+
+                            <div id="category_6" class="tree_item level2">
+                                <input id="checkbox_category_6" type="checkbox" class="tree_checkbox"/>
+                                <a href="#">Green Lantern</a>
+                            </div>
+                            <div id="category_6_container" class="branch level2 hide"></div>
+
+                            <div id="category_7" class="tree_item level2">
+                                <input id="checkbox_category_7" type="checkbox" class="tree_checkbox"/>
+                                <a href="#">Green Arrow</a>
+                            </div>
+                            <div id="category_7_container" class="branch level2 hide"></div>
+
+                            <div id="category_8" class="tree_item level2">
+                                <input id="checkbox_category_8" type="checkbox" class="tree_checkbox"/>
+                                <a href="#">The Flash</a>
+                            </div>
+                            <div id="category_8_container" class="branch level2 hide"></div>
+
+                            <div id="category_9" class="tree_item level2">
+                                <input id="checkbox_category_9" type="checkbox" class="tree_checkbox"/>
+                                <a href="#">Aquaman</a>
+                            </div>
+                            <div id="category_9_container" class="branch level2 hide"></div>
+                        </div>
+
+                        <div id="category_3" class="tree_item level1">
+                            <input id="checkbox_category_3" type="checkbox" class="tree_checkbox"/>
+                            <a href="#">Marvel</a>
+                        </div>
+                        <div id="category_3_container" class="branch level1 hide">
+                            <div id="category_10" class="tree_item level2">
+                                <input id="checkbox_category_10" type="checkbox" class="tree_checkbox"/>
+                                <a href="#">Cyclops</a>
+                            </div>
+                            <div id="category_10_container" class="branch level2 hide"></div>
+
+                            <div id="category_11" class="tree_item level2">
+                                <input id="checkbox_category_11" type="checkbox" class="tree_checkbox"/>
+                                <a href="#">Storm</a>
+                            </div>
+                            <div id="category_11_container" class="branch level2 hide"></div>
+
+                            <div id="category_12" class="tree_item level2">
+                                <input id="checkbox_category_12" type="checkbox" class="tree_checkbox"/>
+                                <a href="#">Spider-Man</a>
+                            </div>
+                            <div id="category_12_container" class="branch level2 hide"></div>
+
+                            <div id="category_13" class="tree_item level2">
+                                <input id="checkbox_category_13" type="checkbox" class="tree_checkbox"/>
+                                <a href="#">Thor</a>
+                            </div>
+                            <div id="category_13_container" class="branch level2 hide"></div>
+
+                            <div id="category_14" class="tree_item level2">
+                                <input id="checkbox_category_14" type="checkbox" class="tree_checkbox"/>
+                                <a href="#">Iron Man</a>
+                            </div>
+                            <div id="category_14_container" class="branch level2 hide"></div>
+
+                            <div id="category_15" class="tree_item level2">
+                                <input id="checkbox_category_15" type="checkbox" class="tree_checkbox"/>
+                                <a href="#">Captain America</a>
+                            </div>
+                            <div id="category_15_container" class="branch level2 hide"></div>
+
+                            <div id="category_16" class="tree_item level2">
+                                <input id="checkbox_category_16" type="checkbox" class="tree_checkbox"/>
+                                <a href="#">Ant-Man</a>
+                            </div>
+                            <div id="category_16_container" class="branch level2 hide"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <superheroes/>
+        </div>
+    </div>
+</div>
+
+
+

@@ -66,10 +66,40 @@
             padding: 0.5em 0;
         }
     }
+
+    &.work {
+        .description {
+            margin-bottom: 1em;
+        }
+    }
 }
 
 .post-content {
     p {
         .pretty-spacing;
+    }
+}
+
+.github-options {
+    margin-top: 0.8em;
+    max-height: 8em;
+
+    li {
+        width: 100%;
+        margin-bottom: 0.5em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .media(@medium, {
+            width: auto;
+            margin-bottom: 0;
+            margin-right: 1em;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        });
     }
 }

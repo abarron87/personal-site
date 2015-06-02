@@ -182,6 +182,70 @@ a img {
   width: 100% !important;
   height: 100% !important;
 }
+.btn {
+  border-radius: 5px;
+  border: 1px solid orangered;
+  color: orangered;
+  padding: 0.4em 0.8em 0.3em;
+  width: 100%;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+.btn:active,
+.btn:hover {
+  background-color: rgba(255, 69, 0, 0.2);
+}
+@media only screen and (min-width: 50em) {
+  .btn {
+    padding: 0.6em 0.8em;
+  }
+}
+.toggle {
+  position: relative;
+  display: block;
+}
+.toggle:before,
+.toggle:after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+.toggle:before {
+  background-color: #ffffff;
+  border-top: 0.5em solid transparent;
+  border-bottom: 0.5em solid transparent;
+  border-left: 0.8em solid #666666;
+  top: 7px;
+}
+.toggle:after {
+  height: 1px;
+  width: 100%;
+  top: 14px;
+  border-top: 1px solid #666666;
+  z-index: -1;
+}
+.toggle + * {
+  transition: max-height 0.2s;
+}
+.toggle.closed + * {
+  overflow: hidden;
+  max-height: 0;
+}
+.toggle.open:before {
+  border-top: 0.8em solid #666666;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0;
+  top: 7px;
+}
+.toggle.open + * {
+  max-height: 20em;
+  margin-bottom: 0.8em;
+}
+.toggle a {
+  margin-left: 1.2em;
+  background-color: #ffffff;
+}
 body {
   font-family: 'fjord-one', sans-serif;
   color: #333333;
@@ -394,11 +458,35 @@ nav#mobile-nav.open .menu {
   text-align: center;
   padding: 0.5em 0;
 }
+.post.work .description {
+  margin-bottom: 1em;
+}
 .post-content p {
   margin: 1em 0 0;
 }
 .post-content p:last-child {
   margin-bottom: 1em;
+}
+.github-options {
+  margin-top: 0.8em;
+  max-height: 8em;
+}
+.github-options li {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+.github-options li:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 50em) {
+  .github-options li {
+    width: auto;
+    margin-bottom: 0;
+    margin-right: 1em;
+  }
+  .github-options li:last-child {
+    margin-right: 0;
+  }
 }
 #site-footer {
   text-align: center;
@@ -438,4 +526,50 @@ nav#mobile-nav.open .menu {
     display: inline-block;
     width: 2em;
   }
+}
+#superheroesWrapper {
+  min-height: 12em;
+}
+#superheroesWrapper .suggestionsContainer {
+  text-align: center;
+  margin-top: 1em;
+}
+#superheroesWrapper .suggestionsContainer .text {
+  padding: 0.4em 0.8em 0.5em;
+  font-size: 1.6em;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #666666;
+  transition: border-color 0.2s;
+}
+#superheroesWrapper .suggestionsContainer .text:focus {
+  border-color: #89CDFC;
+}
+@media only screen and (min-width: 50em) {
+  #superheroesWrapper .suggestionsContainer .text {
+    width: 60%;
+  }
+}
+#superheroesWrapper .suggestionsContainer * {
+  text-align: left;
+  font-family: 'Helvetica Neue';
+}
+#superheroesWrapper .suggestionsContainer .taxonomySuggestions {
+  position: relative;
+  top: -3px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #666666;
+  background-color: #ffffff;
+  padding: 0.2em;
+}
+/* Tree */
+.tree-container {
+  max-height: 1em;
+}
+.tree-container .branch .branch {
+  margin-left: 0.8em;
+}
+.variations {
+  margin-left: 2.5em;
 }

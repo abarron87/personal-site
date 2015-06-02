@@ -22,4 +22,23 @@
             this.parentNode.classList.toggle('open');
         });
     })();
+
+    jQuery(document).ready(function(){
+        jQuery('.toggle').on('click', 'a', function(e){
+            jQuery(e.target).parent().toggleClass('open closed');
+
+            e.preventDefault();
+        });
+
+        jQuery('.tree-container').on('click', 'a', function(e){
+            var target = jQuery(e.target || e.srcElement),
+                categoryChildren = target.parent().next();
+
+            if(categoryChildren.children().length > 0){
+                categoryChildren.toggleClass("hide");
+            }
+
+            e.preventDefault();
+        });
+    });
 })();

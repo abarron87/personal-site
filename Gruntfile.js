@@ -33,13 +33,20 @@ module.exports = function(grunt) {
             dev: {
                 files: {
                     'dev/styles.css': ['dev/styles.css'],
-                    'dev/app.js': ['<%= meta.scripts %>']
+                    'dev/app.js': ['js/*.js'],
+                    'dev/vendor.js': ['js/vendor/*.js']
                 }
             },
             live: {
                 files: {
                     'live/styles.css': ['live/styles.css'],
                     'live/app.js': ['<%= meta.scripts %>']
+                }
+            },
+            demo: {
+                files: {
+                    'work/auto-suggest/angular/js/demo.js': ['work/auto-suggest/angular/js/app.js','work/auto-suggest/angular/js/controllers.js','work/auto-suggest/angular/js/directives.js','work/auto-suggest/angular/js/filters.js','work/auto-suggest/angular/js/services.js'],
+                    'work/auto-suggest/backbone/js/demo.js': ['work/auto-suggest/backbone/js/categoryMapBuilder.js','work/auto-suggest/backbone/js/app.js','work/auto-suggest/backbone/js/collections.js','work/auto-suggest/backbone/js/models.js','work/auto-suggest/backbone/js/views.js']
                 }
             }
         },
@@ -89,6 +96,12 @@ module.exports = function(grunt) {
             live: {
                 files: {
                     'live/app.min.js': ['live/app.js']
+                }
+            },
+            demo: {
+                files: {
+                    'work/auto-suggest/angular/js/demo.min.js': ['work/auto-suggest/angular/js/demo.js'],
+                    'work/auto-suggest/backbone/js/demo.min.js': ['work/auto-suggest/backbone/js/demo.js']
                 }
             }
         },
@@ -189,6 +202,13 @@ module.exports = function(grunt) {
         grunt.task.run('watch');
     });
 
+    grunt.registerTask('demo', function(){
+        grunt.task.run([
+            'concat:demo',
+            'uglify:demo'
+        ]);
+    });
+
     // Alias to `grunt jekyll:dev`
     grunt.registerTask('server', 'jekyll:dev');
 
@@ -199,7 +219,7 @@ module.exports = function(grunt) {
         grunt.task.run('jekyll:live');
     });
 
-    // Compile and minify JS & CSS, run Jekyll live for production 
+    // Compile and minify JS & CSS, run Jekyll live for production
     grunt.registerTask('live', [
         'clean:all',
         'less:live',

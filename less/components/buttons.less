@@ -1,0 +1,19 @@
+.btn {
+    border-radius: 5px;
+    border: 1px solid @tertiary-color;
+    color: @tertiary-color;
+    padding: 0.4em 0.8em 0.3em;
+    width: 100%;
+    display: inline-block;
+    transition: background-color 0.2s;
+
+    &:active,
+    &:hover {
+        background-color: fade(@tertiary-color, 20%);
+        //color: #fff;
+    }
+
+    .media(@medium, {
+        padding: 0.6em 0.8em;
+    });
+}

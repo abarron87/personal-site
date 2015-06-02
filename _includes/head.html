@@ -15,5 +15,9 @@
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
+    {% if site.env == 'production' %}
+    {% else %}
+    <script src="{{ site.baseurl }}/dev/vendor.js"></script>
+    {% endif %}
     {% include google-analytics.html %}
 </head>

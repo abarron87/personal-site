@@ -1,0 +1,56 @@
+.toggle {
+    position: relative;
+    display: block;
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+    }
+
+    &:before {
+        background-color: @body-bg-color;
+        border-top: 0.5em solid transparent;
+        border-bottom: 0.5em solid transparent;
+        border-left: 0.8em solid @secondary-color;
+        top: 7px;
+    }
+
+    &:after {
+        height: 1px;
+        width: 100%;
+        top: 14px;
+        border-top: 1px solid @secondary-color;
+        z-index: -1;
+    }
+
+    & + * {
+        transition: max-height 0.2s;
+    }
+
+    &.closed + * {
+        overflow: hidden;
+        max-height: 0;
+    }
+
+    &.open {
+        &:before {
+            border-top: 0.8em solid @secondary-color;
+            border-left: 0.5em solid transparent;
+            border-right: 0.5em solid transparent;
+            border-bottom: 0;
+            top: 7px;
+        }
+
+        & + * {
+            max-height: 20em;
+            margin-bottom: 0.8em;
+        }
+    }
+
+    a {
+        margin-left: 1.2em;
+        background-color: @body-bg-color;
+    }
+}

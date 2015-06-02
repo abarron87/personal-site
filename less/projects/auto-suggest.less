@@ -1,0 +1,54 @@
+#superheroesWrapper {
+    min-height: 12em;
+
+    .suggestionsContainer {
+        text-align: center;
+        margin-top: 1em;
+
+        .text {
+            padding: 0.4em 0.8em 0.5em;
+            font-size: 1.6em;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid @secondary-color;
+            transition: border-color 0.2s;
+
+            &:focus {
+                border-color: #89CDFC;
+            }
+
+            .media(@medium, {
+                width: 60%;
+            });
+        }
+
+        * {
+            text-align: left;
+            font-family: 'Helvetica Neue';
+        }
+
+        .taxonomySuggestions {
+            position: relative;
+            top: -3px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border: 1px solid @secondary-color;
+            background-color: @body-bg-color;
+            padding: 0.2em;
+        }
+    }
+}
+
+/* Tree */
+.tree-container {
+    max-height: 1em;
+
+    .branch .branch {
+        margin-left: 0.8em;
+    }
+}
+
+
+.variations {
+    margin-left: 2.5em;
+}

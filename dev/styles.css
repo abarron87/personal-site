@@ -553,6 +553,7 @@ nav#mobile-nav.open .menu {
 #superheroesWrapper .suggestionsContainer * {
   text-align: left;
   font-family: 'Helvetica Neue';
+  list-style-type: none;
 }
 #superheroesWrapper .suggestionsContainer .taxonomySuggestions {
   position: relative;
@@ -562,6 +563,17 @@ nav#mobile-nav.open .menu {
   border: 1px solid #666666;
   background-color: #ffffff;
   padding: 0.2em;
+}
+#superheroesWrapper .suggestionsContainer .taxonomySuggestions ul {
+  list-style-type: none;
+}
+@media only screen and (min-width: 50em) {
+  #superheroesWrapper .suggestionsContainer .taxonomySuggestions,
+  #superheroesWrapper .suggestionsContainer .selectedCategories {
+    width: 60%;
+    display: inline-block;
+    text-align: center;
+  }
 }
 /* Tree */
 .tree-container {

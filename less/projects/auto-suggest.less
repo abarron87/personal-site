@@ -25,6 +25,7 @@
         * {
             text-align: left;
             font-family: 'Helvetica Neue';
+            list-style-type: none;
         }
 
         .taxonomySuggestions {
@@ -35,7 +36,20 @@
             border: 1px solid @secondary-color;
             background-color: @body-bg-color;
             padding: 0.2em;
+
+            ul {
+                list-style-type: none;
+            }
         }
+
+        .media(@medium, {
+            .taxonomySuggestions,
+            .selectedCategories {
+                width: 60%;
+                display: inline-block;
+                text-align: center;
+            }
+        });
     }
 }
 

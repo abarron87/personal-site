@@ -1,8 +1,18 @@
 .unorthodox-list {
-    text-align: center;
+    &, li {
+        margin: 0;
+        padding: 0;
+    }
 
     li {
         list-style: none;
-        display: inline-block;
+    }
+
+    &.horizontal {
+        text-align: center;
+
+        li {
+            display: inline-block;
+        }
     }
 }

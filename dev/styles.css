@@ -136,11 +136,18 @@ a img {
   font-weight: normal;
   font-style: normal;
 }
-.unorthodox-list {
-  text-align: center;
+.unorthodox-list,
+.unorthodox-list li {
+  margin: 0;
+  padding: 0;
 }
 .unorthodox-list li {
   list-style: none;
+}
+.unorthodox-list.horizontal {
+  text-align: center;
+}
+.unorthodox-list.horizontal li {
   display: inline-block;
 }
 .social-media-list svg {
@@ -471,6 +478,7 @@ nav#mobile-nav.open .menu {
 .github-options {
   margin-top: 0.8em;
   max-height: 8em;
+  text-align: center;
 }
 .github-options li {
   width: 100%;
@@ -484,10 +492,14 @@ nav#mobile-nav.open .menu {
     width: auto;
     margin-bottom: 0;
     margin-right: 1em;
+    display: inline-block;
   }
   .github-options li:last-child {
     margin-right: 0;
   }
+}
+.github-options li a {
+  text-align: center;
 }
 #site-footer {
   text-align: center;
@@ -590,7 +602,4 @@ nav#mobile-nav.open .menu {
 }
 .tree-container .branch .branch {
   margin-left: 0.8em;
-}
-.variations {
-  margin-left: 2.5em;
 }

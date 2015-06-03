@@ -501,6 +501,10 @@ nav#mobile-nav.open .menu {
 #site-footer .copy {
   display: inline-block;
 }
+.social-media-list {
+  padding: 0;
+  margin: 0;
+}
 @media only screen and (min-width: 50em) {
   #footer-content {
     display: none;

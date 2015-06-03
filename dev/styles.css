@@ -81,9 +81,6 @@ hr,
 dl,
 dt,
 dd,
-ol,
-ul,
-li,
 fieldset,
 legend,
 label {
@@ -324,6 +321,8 @@ nav#mobile-nav .shape-navicon {
 }
 nav#mobile-nav ul {
   width: 13.5em;
+  margin: 0;
+  padding: 0;
 }
 nav#mobile-nav li {
   margin-right: 1em;
@@ -517,6 +516,10 @@ nav#mobile-nav.open .menu {
   }
   .sidebar nav {
     margin-bottom: 0.5em;
+  }
+  .sidebar ul {
+    margin: 0;
+    padding: 0;
   }
   .sidebar li {
     list-style: none;

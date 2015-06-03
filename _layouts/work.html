@@ -1,14 +1,21 @@
 ---
-layout: default
+layout: page
 ---
-<section class="post {{ page.type }}">
+<h2>Description</h2>
+<p class="description">{{ page.description }}</p>
+<span class="toggle closed">
+    <a href="#">options</a>
+</span>
+<ul class="github-options unorthodox-list">
+  <li>
+    <a class="btn" href="https://github.com/{{ site.github-handle }}/{{ page.repo-name }}" target="_blank">View on GitHub</a>
+  </li>
+  <li>
+    <a class="btn" href="https://github.com/{{ site.github-handle }}/{{ page.repo-name }}/zipball/master" target="_blank">Download .zip</a>
+  </li>
+  <li>
+    <a class="btn" href="https://github.com/{{ site.github-handle }}/{{ page.repo-name }}/tarball/master" target="_blank">Download .tar.gz</a>
+  </li>
+</ul>
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
-
-  <article class="post-content">
-    {{ content }}
-  </article>
-
-</section>
+{{ content }}

@@ -7,8 +7,10 @@
 nav {
     a {
         color: @secondary-color;
+        transition: color 0.3s;
 
-        &.active {
+        &.active,
+        &:hover {
             color: @tertiary-color;
         }
     }

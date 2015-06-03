@@ -304,8 +304,10 @@ h2 {
 }
 nav a {
   color: #666666;
+  transition: color 0.3s;
 }
-nav a.active {
+nav a.active,
+nav a:hover {
   color: orangered;
 }
 nav#mobile-nav {

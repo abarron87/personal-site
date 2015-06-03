@@ -7,6 +7,9 @@
         if(path === '/') {
             activeLinks = document.querySelectorAll('.nav-about');
         }
+        else if(~path.indexOf('/work/')) {
+            activeLinks = document.querySelectorAll('.nav-work');
+        }
         else if(path !== '/where-am-i'){
             activeLinks = document.querySelectorAll('.nav-blog');
         }
